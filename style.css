@@ -1,6 +1,8 @@
 * {
     margin: 0;
     font-family:Arial, Verdana, Helvetica, sans-serif;
+    margin: 0;
+    padding: 0;
 }
 
 html {
@@ -8,12 +10,12 @@ html {
     background-position: center center;
     background-size: cover;
     background-repeat: no-repeat;
-    height: fit-content;
+    /* height: fit-content; */
     margin: auto;
     scroll-behavior: smooth;
 }
 
-.Apresentações, .Palestras{
+.ImagensConteudo{
     max-width: 85%;
     height: auto;
     border-radius: 1.5em;
@@ -130,6 +132,7 @@ main {
 .Conteudo, .Noticia, .Individual, .Texto {
     display: flex;
     gap: 1.5em;
+    margin: 16px 32px;
 }
 
 .Conteudo, .Noticia{
@@ -153,7 +156,7 @@ main {
 
 .Texto {
     flex-direction: column;
-    padding: 0 20px;
+    padding: 0;
     justify-content: space-around;
     align-items: center;
 }
@@ -164,10 +167,6 @@ main {
 
 .Texto  p {
     line-height: 1.5em;
-}
-
-.Imagem > img {
-    
 }
 
 #Redação, .Conteudo {
@@ -181,7 +180,7 @@ main {
     justify-self: flex-start;
 }
 
-.Conteudo > img, .Individual > img, .Noticia > img {
+.Conteudo > img, .Individual > img {
     height: fit-content;
     width: 30%;
     border-radius: 2em;
@@ -220,17 +219,6 @@ main {
 
 .Legenda {
     font-size: 1em;
-}
-
-.MomentoCultural {
-    display: flex;
-    flex-direction: column;
-}
-
-.MomentoCultural > .Imagem {
-    width: 50%;
-    height: auto;
-    margin: auto;
 }
 
 #Campanha {
@@ -331,10 +319,10 @@ footer {
 
 button:focus ~ ul{
     left: 0%;
-    background-color: #F1C70F;
+    background-color: #162D56;
 }
 
-@media only screen and (max-width: 850px) {
+@media only screen and (max-width: 1200px) {
     ul{
         padding: 0;
         text-align: left;
@@ -347,6 +335,9 @@ button:focus ~ ul{
         left: -100%;
         top: 0%;
         transition: all .5s;
+    }
+    p{
+        text-align: center;
     }
     li{
         width: 100%;
@@ -361,41 +352,58 @@ button:focus ~ ul{
     .Apresentações{
         width: 95%;
     }
+    .Texto{
+        margin: 0;
+    }
+    .Conteudo, .Invertida, .Noticia, .Individual, #Redação {
+        margin: .5em;
+        padding: .5em;
+        flex-wrap: wrap;
+        flex-direction: column;
+        align-items: center;
+        justify-items: center;
+    }
+    .Imagem{
+        width: 70vw;
+        height: auto;
+        justify-content: center;
+    }
 }
 
-@media only screen and (max-width: 650px) {
+@media only screen and (max-width: 660px) {
     main {
         max-width: 95%;
     }
 
-    .Apresentações, source > img{
+    nav > button{
+        width: 1em;
+        height: 1em;
+        font-size: 3em;
+        align-items: center;
+        justify-content: center;
+        background-color: #4c88f1;
+        border: 2px solid white;
+        border-radius: 10px;
+    }
+
+    .ImagensConteudo > img, picture > img{
         width: 95%;
     }
 
     #LogoSubtitulos {
         flex-direction: column;
     }
+
     #LogoSubtitulos > a > img{
         width: 80vw;
         justify-content: center;
     }
-    .Conteudo, .Invertida, .Noticia, .Individual, #Redação {
-        margin: .5em -.9em;
-        padding: .5em;
-        flex-wrap: wrap;
-        flex-direction: column;
-        align-items: center;
-    }
 
     .Imagem{
-        width: 100%;
-        height: 30vh;
+        width: 90%;
+        height: auto;
     }
 
-    .Conteudo > img, .Noticia > img, .Individual > img, .Imagem > img {
-        width: 100%;
-        height: 100%;
-    }
     .Texto > h1, .Texto > h2 {
         margin-bottom: 1em;
     }
