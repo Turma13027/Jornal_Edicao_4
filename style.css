@@ -10,9 +10,39 @@ html {
     background-position: center center;
     background-size: cover;
     background-repeat: no-repeat;
-    /* height: fit-content; */
     margin: auto;
     scroll-behavior: smooth;
+}
+
+li #SubLista{
+    padding: 1em;
+    border: 1px solid white;
+    border-radius: 1.5em;
+    background-color: #162D56;
+    position: absolute;
+    display: none;
+    color: white;
+    font-size: .75em;
+    max-width: 81.25%;
+    left: 8.25%;
+    top: 29%; 
+}
+
+li:hover #SubLista{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    animation: aparecer .9s forwards;
+}
+
+@keyframes aparecer {
+    0% {
+        top: 10%;
+    }
+    100% {
+        top: 29%;
+    }
 }
 
 .AjusteContainer{
@@ -112,20 +142,27 @@ ul{
     display: flex;
     gap: 1.5em;
     text-align: center;
+    justify-content: center;
 }
 
 li{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+li, li > p{
     text-align: center;
     list-style: none;
     font-size: 1.25em;
 }
 
-li > a{
+li > a, li > p{
     color: white;
     padding: 1em;
 }
 
-li:hover,button:hover,li > a:hover{
+button:hover,li > a:hover, li > p:hover{
     background-color: #4c88f1;
     cursor: pointer;
 }
@@ -357,6 +394,12 @@ button:focus ~ ul{
         top: 0%;
         transition: all .5s;
     }
+    li:hover #SubLista{
+        top: 0;
+        width: 100vw;
+        height: fit-content;
+        animation: none;
+    }
     p{
         text-align: center;
     }
@@ -394,6 +437,12 @@ button:focus ~ ul{
 @media only screen and (max-width: 660px) {
     main {
         max-width: 95%;
+    }
+
+    li:hover #SubLista{
+        left: 5%;
+        width: 100vw;
+        border: none;
     }
 
     nav > button{
